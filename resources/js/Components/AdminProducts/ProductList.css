@@ -1,0 +1,49 @@
+.app {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 50%;
+  background-color: #fff;
+  /* color: rgb(207, 198, 198); */
+  height: 100%;
+  position: absolute;
+  right: -50%;
+  top: 0;
+  transition: left 0.3s ease;
+  /* padding: 20px; */
+  z-index: 1000;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #555;
+}
+
+.content {
+  margin-left: 20px;
+  padding: 2rem;
+}
+
+
+
