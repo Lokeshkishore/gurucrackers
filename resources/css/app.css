@@ -1641,7 +1641,7 @@ footer {
 .footer-nav-link,
 .footer-nav-item .content {
   width: max-content;
-  color: var(--sonic-silver);
+  color: var(--white);
   font-size: var(--fs-7);
   text-transform: capitalize;
   transition: var(--transition-timing);
@@ -2172,7 +2172,7 @@ footer {
     right: -3px;
     background: var(--bittersweet);
     color: var(--white);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: var(--weight-500);
     line-height: 1;
     padding: 2px 4px;
@@ -2508,7 +2508,7 @@ footer {
 
   .product-featured .display-number { --fs-5: 1.125rem; }
 
-  .product-grid { grid-template-columns: repeat(4, 1fr); }
+  .product-grid { grid-template-columns: repeat(5, 1fr); }
 
 
 
@@ -2536,6 +2536,20 @@ footer {
   .service-item {
     flex-direction: row;
     text-align: left;
+  }
+
+  .cart-parent{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cart-btn{
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 8px;
+    background: #f15800;
+    color: #fff;
   }
 
 

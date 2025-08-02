@@ -20,7 +20,7 @@ const OrderForm = () => {
           setCartList(JSON.parse(storedItems));
         }
       }, []);
-      const totalPrice = cartlist.reduce((sum, item) => sum + Number(item.display_price), 0);
+      const totalPrice = cartlist.reduce((sum, item) => sum + Number(item.buying_price), 0);
 
       const handleChange = (e) => {
      const { name,value} = e.target;
@@ -175,9 +175,9 @@ const OrderForm = () => {
                                     <td className='cart-input-td'>
                                         <span>{product.buying_quantity} </span>
                                         <span><ion-icon name="close-sharp"></ion-icon></span>
-                                        <span>{product.price} </span>
+                                        <span>{product.display_price} </span>
                                     </td>
-                                    <td>{product.display_price}</td>
+                                    <td>{product.buying_price}</td>
                                     </tr>
                             })}
                                     <tr>

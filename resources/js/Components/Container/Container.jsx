@@ -1,5 +1,5 @@
 import React from 'react'
-import banner1 from '../../../assets/banner-1.jpg'
+import banner1 from '../../../assets/banner-1.jpeg'
 import banner2 from '../../../assets/banner-2.jpg'
 import banner3 from '../../../assets/banner-3.jpg'
 
@@ -20,7 +20,7 @@ const Container = () => {
 
               {/* <p class="banner-subtitle">Trending item</p> */}
 
-              <h2 class="banner-title">Light Up Your Celebrations with the Best Crackers in Town!</h2>
+              {/* <h2 class="banner-title">Light Up Your Celebrations with the Best Crackers in Town!</h2> */}
 {/*
               <p class="banner-text">
                 starting at &dollar; <b>20</b>.00

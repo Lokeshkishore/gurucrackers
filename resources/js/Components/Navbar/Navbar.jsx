@@ -19,14 +19,14 @@ const Navbar = () => {
     else if(type=='minus'){
         document.getElementById(id).value = Number(document.getElementById(id).value) - 1;
     }
-    var priceTag = Number(document.getElementById(id).value) * Number(product.price);
+    var priceTag = Number(document.getElementById(id).value) * Number(product.display_price);
     setCartList(prevItems =>
       prevItems.map(item =>
-        item.id === product.id ? { ...item, display_price: priceTag,buying_quantity:Number(document.getElementById(id).value)} : item
+        item.id === product.id ? { ...item, buying_price: priceTag,buying_quantity:Number(document.getElementById(id).value)} : item
       )
     );
   }
-   const totalPrice = cartlist.reduce((sum, item) => sum + Number(item.display_price), 0);
+   const totalPrice = cartlist.reduce((sum, item) => sum + Number(item.buying_price), 0);
 
    const checkOutCart=(cartlist)=>{
      localStorage.setItem('orderCart', JSON.stringify(cartlist));
@@ -353,7 +353,7 @@ const Navbar = () => {
                                         <span><input type="number" id={`quantity${product.id}`} value={product.buying_quantity} className='cart-input'/></span>
                                         <span onClick={() => changeQuantity(product,`quantity${product.id}`,'plus')}> <ion-icon name="add-outline"></ion-icon></span>
                                     </td>
-                                    <td>{product.display_price}</td>
+                                    <td>{product.buying_price}</td>
                                     <td> <div><ion-icon name="close-sharp"></ion-icon></div></td>
                                     </tr>
                             })}

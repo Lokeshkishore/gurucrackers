@@ -9,9 +9,10 @@ const Products = () => {
     axios.get(`${baseUrl}/crackers/products`).then((response) => {
       if(response){
           response.data.data.forEach((item)=>{
-              item.display_price = item.price;
+              item.original_price =  item.price;
+              item.display_price = Number(item.price) - ((item.offer_percent / 100) * Number(item.price) );
+                item.buying_price = Number(item.price) - ((item.offer_percent / 100) * Number(item.price) );
               item.buying_quantity = 1;
-              item.original_price =  Number(item.price) + ((item.offer_percent / 100) * Number(item.price) )
               item.addCart = true;
           });
          setProductlist(response.data.data);
@@ -60,9 +61,9 @@ const Products = () => {
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button> */}
 
-                    <button className="btn-action" onClick={() => addToCart(product)}>
+                    {/* <button className="btn-action" onClick={() => addToCart(product)}>
                       <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
+                    </button> */}
                   </div>
 
                 </div>
@@ -74,25 +75,27 @@ const Products = () => {
                   {/* <a href="#">
                     <h3 className="showcase-title">Mens Winter Leathers Jackets</h3>
                   </a> */}
-
-                  <div className="showcase-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                  </div>
+                   <div className='cart-parent'>
+                    <div className="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div>
+                        <button className="cart-btn" onClick={() => addToCart(product)}>
+                           Add to cart
+                        </button>
+                    </div>
+                   </div>
 
                   <div className="price-box">
-                    <p className="price">₹{product.price}</p>
+                    <p className="price">₹{product.display_price}</p>
                     <del>₹{product.original_price}</del>
                   </div>
 
-                  {/* <div>
-                    <ion-icon name="remove-outline"></ion-icon>
 
-                    <ion-icon name="add-outline"></ion-icon>
-                  </div> */}
 
                 </div>
 
